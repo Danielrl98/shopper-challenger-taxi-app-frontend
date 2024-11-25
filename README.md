@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+## Introdução
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto taxi-app frontend para o processo seletivo da shopper.com.br.
 
-Currently, two official plugins are available:
+## instalação 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Você precisará ter o GIT instalado na sua máquina, e, após isso, clonar este repositório:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+   git clone https://github.com/Danielrl98/shopper-challenger-taxi-app-frontend.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+   cd shopper-challenger-taxi-app-frontend
 ```
+
+Você precisará ter o Docker e Docker compose na sua máquina, após isso, executar o comando na pasta raiz do projeto:
+
+```
+    docker compose up
+```
+
+## Requisitos
+
+Instalação do backend do repositório: https://github.com/Danielrl98/shopper-challenger-taxi-app-backend.git
