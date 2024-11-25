@@ -2,7 +2,7 @@
 
 Projeto taxi-app frontend para o processo seletivo da shopper.com.br.
 
-## instalação 
+## Instalação 
 
 Você precisará ter o GIT instalado na sua máquina, e, após isso, clonar este repositório:
 
