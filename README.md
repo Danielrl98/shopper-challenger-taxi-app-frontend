@@ -23,3 +23,9 @@ Você precisará ter o Docker e Docker compose na sua máquina, após isso, exec
 ## Requisitos
 
 Instalação do backend do repositório: https://github.com/Danielrl98/shopper-challenger-taxi-app-backend.git
+
+habilitar "Google Maps Api" no google cloud
+
+### Variáveis de ambiente
+
+VITE_GOOGLE_API_KEY
