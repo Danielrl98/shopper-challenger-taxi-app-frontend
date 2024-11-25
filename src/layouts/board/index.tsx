@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { FaChevronDown, FaStar } from 'react-icons/fa';
 import { Toaster, toaster } from '@/components/ui/toaster';
+import { Maps } from '@/ui/maps';
 
 const ridesApi = new RidesApi();
 
@@ -132,14 +133,9 @@ export function Board() {
               <ButtonLoad />
             )}
           </div>{' '}
-          {map ? (
+          {rides ? (
             <div className="flex justify-center">
-              <img
-                width="250"
-                className="rounded mt-[-30px]"
-                src="images/static-map.avif"
-                alt="static-map"
-              />
+              <Maps start={{lat: rides.origin.latitude, lng: rides.origin.longitude}} end={{lat: rides.destination.latitude, lng: rides.destination.longitude}}/>
             </div>
           ) : (
             ''
@@ -167,9 +163,9 @@ export function Board() {
                     <AccordionRoot key={index} collapsible={true}>
                       <AccordionItem value={option.name}>
                         <AccordionItemTrigger className="px-5">
-                          <div className="flex gap-8 pb-10 items-center">
+                          <div className="flex items-center gap-8 pb-10">
                             <FaChevronDown />
-                            <div className="text-left grid gap-2 grid-cols-2">
+                            <div className="grid grid-cols-2 gap-2 text-left">
                               <div className="w-[20em]">
                                 <div className="flex gap-2">
                                   <FaStar color="orange" />
