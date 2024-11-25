@@ -1,0 +1,8 @@
+.border-right-orange {
+  border-right: 2px solid var(--main-color-orange) !important;
+}
+.background-orange {
+  background-color: var(--main-color-orange) !important;
+  color: white !important;
+  font-weight: 600 !important;
+}

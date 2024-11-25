@@ -1,20 +1,19 @@
 import { Fragment } from 'react';
-import { Button } from "@/components/ui/button"
-import { HStack } from '@chakra-ui/react';
+import { Side } from '@/layouts/side';
+import { Board } from '@/layouts/board';
+import './App.css';
+
 function App() {
   return (
-  <Fragment>
-    <div className="container mx-auto">
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <HStack>
-      <Button>teste</Button>
-    </HStack>
-    </div>
-  </Fragment>
- 
-  )
+    <Fragment>
+      <div>
+        <div className="grid grid-cols-[400px_minmax(600px,_1fr)_100px] 20px">
+          <Side />
+          <Board />
+        </div>
+      </div>
+    </Fragment>
+  );
 }
 
 export default App;

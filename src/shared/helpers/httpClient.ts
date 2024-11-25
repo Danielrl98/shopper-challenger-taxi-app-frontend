@@ -9,9 +9,10 @@ export class HttpClient {
         'Content-Type': 'application/json',
       },
     })
-      .then((res) => {
-        this.logger.debug(JSON.stringify(res));
-        return res.json();
+      .then(async (res) => {
+        const json = await res.json();
+        this.logger.debug(JSON.stringify(json));
+        return json;
       })
       .catch((err) => {
         this.logger.error(err);
@@ -29,9 +30,10 @@ export class HttpClient {
       },
       body: body,
     })
-      .then((res) => {
-        this.logger.debug(JSON.stringify(res));
-        return res.json();
+      .then(async (res) => {
+        const json = await res.json();
+        this.logger.debug(JSON.stringify(json));
+        return json;
       })
       .catch((err) => {
         this.logger.error(err);
@@ -49,9 +51,10 @@ export class HttpClient {
       },
       body: body,
     })
-      .then((res) => {
-        this.logger.debug(JSON.stringify(res));
-        return res.json();
+      .then(async (res) => {
+        const json = await res.json();
+        this.logger.debug(JSON.stringify(json));
+        return json;
       })
       .catch((err) => {
         this.logger.error(err);

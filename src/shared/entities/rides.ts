@@ -4,9 +4,38 @@ export interface IRidesEstimateRequest {
   destination: string;
 }
 
+export interface IRidesEstimateResponse {
+  origin: {
+    latitude: number;
+    longitude: number;
+  };
+  destination: {
+    latitude: number;
+    longitude: number;
+  };
+  distance: number;
+  duration: string;
+  options: [
+    {
+      id: number;
+      name: string;
+      description: string;
+      vehicle: string;
+      review: {
+        rating: number;
+        comment: string;
+      };
+      value: number;
+    },
+  ];
+  routeResponse: object;
+  error_code?: string;
+  error_description?: string;
+}
+
 export interface IRides {
   id: number;
-  date: Date;
+  date: string;
   origin: string;
   destination: string;
   distance: number;
@@ -23,7 +52,7 @@ export interface IDriver {
   name: string;
 }
 export interface IRidesConfirmRequest {
-  customer_id: string;
+  customer_id: number;
   origin: string;
   destination: string;
   distance: number;
@@ -34,9 +63,13 @@ export interface IRidesConfirmRequest {
 
 export interface IRidesConfirmResponse {
   success: boolean;
+  error_code?: string;
+  error_description?: string;
 }
 
 export interface IRidesListRideResponse {
   customer_id: string;
   rides: IRides[] & { driver: IDriver };
+  error_code?: string;
+  error_description?: string;
 }

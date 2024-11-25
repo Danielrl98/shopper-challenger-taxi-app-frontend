@@ -4,12 +4,13 @@ import {
   IRidesConfirmResponse,
   IRidesConfirmRequest,
   IRidesListRideResponse,
+  IRidesEstimateResponse,
 } from '../entities/rides';
 
 export class RidesApi {
   private readonly httpClient: HttpClient = new HttpClient();
-  private readonly baseUrl = 'http://localhost:8080/rides';
-  async estimate(body: IRidesEstimateRequest): Promise<IRidesConfirmResponse> {
+  private readonly baseUrl = 'http://localhost:8080/ride';
+  async estimate(body: IRidesEstimateRequest): Promise<IRidesEstimateResponse> {
     const result = this.httpClient.post(
       this.baseUrl + '/estimate',
       JSON.stringify(body),
