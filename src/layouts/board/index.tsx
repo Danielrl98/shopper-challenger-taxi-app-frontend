@@ -24,10 +24,13 @@ export function Board() {
   const [loadButton, setLoadButton] = useState(false);
   const [rides, setRides] = useState<IRidesEstimateResponse>();
   const [map, setMap] = useState(false);
-  const [lastRides, setLastRides] = useState<{
-    origin: string,
-    destination: string
-  } | undefined>();
+  const [lastRides, setLastRides] = useState<
+    | {
+        origin: string;
+        destination: string;
+      }
+    | undefined
+  >();
 
   async function searchRide() {
     setLoadButton(true);
@@ -91,9 +94,9 @@ export function Board() {
     setRides(undefined);
     setMap(false);
     setLastRides({
-      origin, 
-      destination
-    })
+      origin,
+      destination,
+    });
   }
 
   useEffect(() => {}, [origin, destination]);
@@ -217,7 +220,7 @@ export function Board() {
           )}
         </section>
         <section>
-          { lastRides ? (
+          {lastRides ? (
             <div className="pt-20">
               <h3 className="pb-5 font-bold">Última corrida</h3>
               <div className="flex flex-col gap-3 text-[14px]">
@@ -225,7 +228,9 @@ export function Board() {
                 <p>Destino: {lastRides.destination}</p>
               </div>
             </div>
-          ) : ''}
+          ) : (
+            ''
+          )}
         </section>
       </div>
     </Fragment>
